@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz sur les Animaux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+    .quiz-container {
+        background-color: #161616;
+        margin: 50px auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 0 25px brown;
+        color: white;
+        border: 2px solid brown;
+    }
+
+    h1 {
+        text-align: center;
+        color: brown;
+        margin-bottom: 20px;
+        font-size: 4rem;
+        
+    }
+
+    .btn {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #161616;
+        color: white;
+        border: 2px solid brown;
+        border-radius: 3.5rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        font-weight: 600px;
+        margin-bottom: 50px;
+    }
+
+    .btn:hover {
+        transform: scale3d(1.03);
+        background-color: brown;
+        color: white;
+        box-shadow: 0 0 25px brown;
+    }
+
+    .question {
+        margin-bottom: 40px;
+        font-size: 1.5rem;
+    }
+
+    .radio{
+        margin-bottom: 40px;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    #result {
+        
+        margin-top: 20px;
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        /* Jaune doux pour mettre en avant le score */
+    }
+
+    #correctAnswers  {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #f0f0f0;
+        /* Texte clair */
+        text-align: left;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #allCorrectAnswers{
+        margin-top: 10px;
+        font-size: 1.5em;
+        color: #f0f0f0;
+        /* Texte clair */
+        text-align: left;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Style des sections de réponses correctes */
+    #correctAnswers h3 {
+        color: brown;
+        font-size: 1.5em;
+    }
+
+    #allCorrectAnswers h3{
+        color: brown;
+        font-size: 1.5em;
+    }
+</style>
+
+<body>
+    <div class="quiz-container">
+        <h1>Quiz sur le Dessin</h1>
+        <form id="quizForm">
+            <div class="question" id="question1">
+                <p>1. Qui a peint la Mona Lisa ?</p>
+                <div class="radio">
+                    <input type="radio" id="q1a" name="q1" value="incorrect"> Claude Monet<br>
+                    <input type="radio" id="q1b" name="q1" value="correct"> Léonard de Vinci<br>
+                    <input type="radio" id="q1c" name="q1" value="incorrect"> Vincent van Gogh<br>
+                </div>
+            </div>
+            <div class="question" id="question2">
+                <p>2. Quel est le principal matériau utilisé dans le dessin traditionnel ?</p>
+                <input type="radio" id="q2a" name="q2" value="incorrect"> La peinture à l'huile<br>
+                <input type="radio" id="q2b" name="q2" value="correct"> Un crayon<br>
+                <input type="radio" id="q2c" name="q2" value="incorrect"> De la peinture acrylique<br>
+            </div>
+            <div class="question" id="question3">
+                <p>3. Quelle technique est utilisée pour peindre sur un mur ?</p>
+                <input type="radio" id="q3a" name="q3" value="incorrect"> Peinture à l'huile<br>
+                <input type="radio" id="q3b" name="q3" value="correct"> Fresque<br>
+                <input type="radio" id="q3c" name="q3" value="incorrect"> Gouache<br>
+            </div>
+            <div class="question" id="question4">
+                <p>4. Quel peintre est célèbre pour ses 'Nympheas' ?</p>
+                <input type="radio" id="q4a" name="q4" value="correct"> Claude Monet<br>
+                <input type="radio" id="q4b" name="q4" value="incorrect"> Pablo Picasso<br>
+                <input type="radio" id="q4c" name="q4" value="incorrect"> Salvador Dalí<br>
+            </div>
+            <div class="question" id="question5">
+                <p>5. Quelle couleur est obtenue en mélangeant du bleu et du jaune ?</p>
+                <input type="radio" id="q5a" name="q5" value="incorrect"> Orange<br>
+                <input type="radio" id="q5b" name="q5" value="incorrect"> Violet<br>
+                <input type="radio" id="q5c" name="q5" value="correct"> Vert<br>
+            </div>
+            <div class="question" id="question6">
+                <p>6. Qui a peint 'Starry Night' ?</p>
+                <input type="radio" id="q6a" name="q6" value="incorrect"> Claude Monet<br>
+                <input type="radio" id="q6b" name="q6" value="correct"> Vincent van Gogh<br>
+                <input type="radio" id="q6c" name="q6" value="incorrect"> Pablo Picasso<br>
+            </div>
+            <div class="question" id="question7">
+                <p>7. Quel est le nom du style de peinture basé sur des formes géométriques ?</p>
+                <input type="radio" id="q7a" name="q7" value="incorrect"> Surréalisme<br>
+                <input type="radio" id="q7b" name="q7" value="incorrect"> Impressionnisme<br>
+                <input type="radio" id="q7c" name="q7" value="correct"> Cubisme<br>
+            </div>
+            <div class="question" id="question8">
+                <p>8. Quelle technique consiste à dessiner avec de l'encre ?</p>
+                <input type="radio" id="q8a" name="q8" value="correct"> Gravure<br>
+                <input type="radio" id="q8b" name="q8" value="incorrect"> Peinture à l'eau<br>
+                <input type="radio" id="q8c" name="q8" value="incorrect"> Aquarelle<br>
+            </div>
+            <div class="question" id="question9">
+                <p>9. Qui est l'artiste créateur de 'Guernica' ?</p>
+                <input type="radio" id="q9a" name="q9" value="correct"> Pablo Picasso<br>
+                <input type="radio" id="q9b" name="q9" value="incorrect"> Henri Matisse<br>
+                <input type="radio" id="q9c" name="q9" value="incorrect"> Andy Warhol<br>
+            </div>
+            <div class="question" id="question10">
+                <p>10. Quel est le nom de l'outil utilisé pour estomper un dessin au crayon ?</p>
+                <input type="radio" id="q10a" name="q10" value="correct"> Tortillon<br>
+                <input type="radio" id="q10b" name="q10" value="incorrect"> Pinceau<br>
+                <input type="radio" id="q10c" name="q10" value="incorrect"> Éponge<br>
+            </div>
+
+            <button type="button" class="btn" onclick="checkQuiz()">Validation</button>
+        </form>
+        <p id="result"></p>
+        <div  id="correctAnswers"></div>
+        <div id="allCorrectAnswers"></div>
+
+    </div>
+
+    <footer class="footer">   
+        <ul class="list">
+            <li>
+                <a href="index.html#skills">Skills</a>
+            </li>
+            <li>
+                <a href="index.html">About Me</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="iit.html">IIT</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
